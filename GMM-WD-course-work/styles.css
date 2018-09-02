@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-size: 18px;
+}
+.navigation ul{
+  font-size: 22px;
+  list-style: none;
+}
+.navigation li{
+  display: inline-block;
+  padding:  10px 15px;
+}
+.navigation a{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.navigation a:hover{
+  color: white;
+  text-shadow: 0px 0px 8px black;
+}
+.navigation{
+  cursor: pointer;
+  text-align: center;
+  padding-top: 5px;
+  height: 100px;
+  background: linear-gradient(to bottom right, blue , aqua);
+}
+.navigation ul ul{
+  display: none;
+  position: absolute;
+}
+.navigation ul li:hover>ul{
+  display: block;
+}
+.subnav li{
+  position: relative;
+  left: -85px;
+  display: inline-block;
+  margin: -5px;
+}
+#dropdown{
+  margin-left: 10px;
+}
+#dropdown i{
+  position: relative;
+  top:25px;
+  left: -40px;
+}
+.navigation button{
+  width: 100px;
+  height: 35px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  background: inherit;
+  position: absolute;
+  top: 35px;
+  right: 50px;
+}
+.navigation button:hover{
+  cursor: pointer;
+  color: white;
+  text-shadow: 0px 0px 8px black;
+}
+.navigation button:focus
+{
+  outline: none;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+.main-section{
+  text-align: center;
+  background:url("images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  padding: 30px 150px;
+  color: white;
+}
+.main-section p{
+  padding: 35px 120px;
+  text-shadow: 0px 0px 4px black;
+  padding-bottom: 0px;
+}
+footer{
+  height: 150px;
+  background: black;
+  color: white;
+}
+footer section{
+  height: 150px;
+  text-align: center;
+}
+article.icons{
+  padding: 10px;
+}
+article.icons h1{
+  text-transform: capitalize;
+  margin: 10px;
+}
+footer section article div{
+  width: 70px;
+  height: 58px;
+  background: url("images/social.jpg");
+  display: inline-block;
+}
+
+article.icons>div.facebook{
+  background-position: 0px 0px;
+}
+article.icons>div.facebook:hover{
+  background-position: 0px 60px;
+}
+article.icons>div.linkedin{
+  background-position: 642px 126px;
+}
+article.icons>div.linkedin:hover{
+  background-position: 642px 186px;
+}
+article.icons>div.utube{
+  background-position: 325px 126px;
+}
+article.icons>div.utube:hover{
+  background-position: 325px 186px;
+}
+article.icons>div.twitter {
+   background-position: 772px 126px;
+ }
+ article.icons>div.twitter:hover {
+    background-position: 772px 186px;
+  }
+  article.icons>div{
+    cursor: pointer;
+  }
