@@ -8,12 +8,14 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
-var scores,roundScore,activePlayer,dice;
+var scores,roundScore,activePlayer,dice, gamePlaying;
 var diceDOM = document.querySelector('.dice');
 
 init();
 
 function btn(){
+  if (gamePlaying) {
+
   dice = Math.floor((Math.random() * 6) + 1);
   diceDOM = document.querySelector('.dice');
 
@@ -28,11 +30,13 @@ function btn(){
     nextPlayer();
   }
 }
+}
 document.querySelector('.dice').style.display = 'none';
 
 document.querySelector('.btn-roll').addEventListener('click', btn);
 
 document.querySelector('.btn-hold').addEventListener('click', function(){
+  if (gamePlaying) {
 
   scores[activePlayer] += roundScore;
 
@@ -43,9 +47,11 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
     document.querySelector('.dice').style.display = 'none';
     document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
     document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+    gamePlaying = false;
   }else {
     nextPlayer();
   }
+}
 });
 
 
@@ -69,6 +75,7 @@ function init(){
   scores = [0,0];
   roundScore = 0;
   activePlayer = 0;
+  gamePlaying = true;
 
   document.getElementById('score-0').textContent = '0';
   document.getElementById('score-1').textContent = '0';
@@ -78,6 +85,8 @@ function init(){
   document.querySelector('#name-1').textContent = 'Player 2';
   document.querySelector('.player-0-panel').classList.remove('winner');
   document.querySelector('.player-1-panel').classList.remove('winner');
+  document.querySelector('.player-1-panel').classList.remove('active');
+  document.querySelector('.player-1-panel').classList.remove('active');
   document.querySelector('.player-0-panel').classList.add('active');
 
 }
